@@ -1,10 +1,14 @@
 import React from 'react'
 import { Container, Row, Col, Form, Button } from 'react-bootstrap';
+import { useNavigate } from 'react-router-dom';
 
-const Login = () => {
+const Login = ({ setAuthenticate }) => {
+  const navigate = useNavigate();
 
   const loginUser = (event) => {
     event.preventDefault();
+    setAuthenticate(true);
+    navigate('/')
   }
 
   return (
